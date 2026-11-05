@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wakefieldmines-prog.github.io/wakefield-website/sitemap.xml

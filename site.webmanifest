@@ -1,0 +1,28 @@
+{
+  "name": "Wakefield Mines and Construction Limited",
+  "short_name": "Wakefield",
+  "description": "Contract mining and construction in Ghana. Trust, Partnership and Efficiency.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#1C232D",
+  "theme_color": "#1C232D",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
