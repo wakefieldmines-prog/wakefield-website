@@ -645,57 +645,16 @@
 
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
     }
 
-    .team-card {
-      background: var(--warm-white);
-      border-bottom: 2px solid transparent;
-      transition: var(--transition);
-    }
 
-    .team-card:hover {
-      border-bottom-color: var(--amber);
-      transform: translateY(-4px);
-    }
 
-    .team-photo {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center top;
-      background: var(--charcoal);
-    }
 
-    .team-info {
-      padding: 1.6rem 1.6rem 1.8rem;
-    }
 
-    .team-role {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 0.5rem;
-    }
 
-    .team-info h3 {
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--graphite);
-      margin-bottom: 0.7rem;
-      line-height: 1.25;
-    }
 
-    .team-info p {
-      font-size: 0.85rem;
-      color: var(--steel);
-      line-height: 1.6;
-    }
 
     .team-creds {
       list-style: none;
@@ -707,6 +666,9 @@
       border-top: 1px solid var(--light-grey);
     }
 
+
+
+
     .team-creds li {
       font-size: 0.68rem;
       font-weight: 600;
@@ -715,6 +677,542 @@
       background: var(--white);
       border: 1px solid var(--light-grey);
       padding: 0.3rem 0.6rem;
+    }
+
+    /* ---------- PEOPLE ---------- */
+    .team-header-side {
+      max-width: 440px;
+    }
+
+    .team-header-side p {
+      margin-bottom: 1.2rem;
+    }
+
+    .team-grid.directors {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .person-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      cursor: pointer;
+      box-shadow: 0 1px 0 var(--light-grey);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .section-team .person-card,
+    .pg-section.white .person-card {
+      background: var(--warm-white);
+    }
+
+    .person-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(28, 35, 45, 0.12);
+    }
+
+    .person-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--charcoal);
+    }
+
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .person-photo::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: var(--amber);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .person-card:hover .person-photo img {
+      transform: scale(1.05);
+    }
+
+    .person-card:hover .person-photo::after {
+      transform: scaleX(1);
+    }
+
+    .person-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 1.5rem 1.5rem 1.6rem;
+    }
+
+    .person-role {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+
+    .person-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--graphite);
+      margin-bottom: 0.3rem;
+    }
+
+    .person-title {
+      font-size: 0.88rem;
+      color: var(--steel);
+      margin-bottom: 1.2rem;
+    }
+
+    .person-link {
+      margin-top: auto;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      transition: color 0.2s;
+    }
+
+    .person-link span {
+      display: inline-block;
+      transition: transform 0.25s;
+    }
+
+    .person-card:hover .person-link,
+    .join-card:hover .person-link {
+      color: var(--amber);
+    }
+
+    .person-card:hover .person-link span,
+    .join-card:hover .person-link span {
+      transform: translateX(4px);
+    }
+
+    .join-card {
+      position: relative;
+      grid-column: span 2;
+      display: flex;
+      align-items: flex-end;
+      min-height: 100%;
+      overflow: hidden;
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .join-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      transition: transform 0.7s ease, opacity 0.4s;
+    }
+
+    .join-card:hover img {
+      transform: scale(1.04);
+      opacity: 0.45;
+    }
+
+    .join-body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 2.4rem;
+      max-width: 520px;
+    }
+
+    .join-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .join-text {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.4rem;
+    }
+
+    .join-card .person-link {
+      color: var(--white);
+    }
+
+    /* profile pages */
+    .profile-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 4.5rem 0 5rem;
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(178, 133, 42, 0.16) 0%, transparent 55%),
+        linear-gradient(160deg, #262E39 0%, var(--graphite) 60%);
+      color: var(--white);
+    }
+
+    .profile-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .profile-photo {
+      position: relative;
+      margin: 0 18px 18px 0;
+    }
+
+    .profile-photo::before {
+      content: '';
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 2px solid var(--amber);
+    }
+
+    .profile-photo img {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--charcoal);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .profile-intro h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.3rem, 4.6vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .profile-title {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 1.4rem;
+    }
+
+    .profile-lead {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 620px;
+    }
+
+    .profile-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2.2rem 0;
+      padding: 1.6rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat .v {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat .k {
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .profile-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .profile-actions .btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .profile-body {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 4.5rem;
+      align-items: start;
+    }
+
+    .profile-h {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--graphite);
+      margin: 3.2rem 0 1.4rem;
+    }
+
+    .profile-h::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--amber);
+    }
+
+    .profile-main > .profile-h:first-child {
+      margin-top: 0;
+    }
+
+    .profile-main > p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--steel);
+      margin-bottom: 1.1rem;
+      max-width: 760px;
+    }
+
+    .timeline {
+      list-style: none;
+      border-left: 2px solid var(--light-grey);
+      padding-left: 2rem;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline li:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: calc(-2rem - 8px);
+      top: 0.2rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--warm-white);
+      border: 3px solid var(--amber);
+    }
+
+    .t-date {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline h3 {
+      font-family: var(--font-heading);
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--graphite);
+    }
+
+    .t-org {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--graphite);
+      opacity: 0.75;
+      margin: 0.15rem 0 0.5rem;
+    }
+
+    .timeline p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--steel);
+      max-width: 700px;
+    }
+
+    .pub-list {
+      list-style: none;
+      counter-reset: pub;
+    }
+
+    .pub-list li {
+      counter-increment: pub;
+      position: relative;
+      padding: 1rem 0 1rem 2.6rem;
+      border-bottom: 1px solid var(--light-grey);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--graphite);
+    }
+
+    .pub-list li::before {
+      content: counter(pub, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--amber);
+    }
+
+    .profile-side {
+      position: sticky;
+      top: calc(var(--header-height) + 1.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .side-card {
+      background: var(--white);
+      padding: 1.8rem;
+      border-top: 3px solid var(--amber);
+    }
+
+    .side-card h3 {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--graphite);
+      margin-bottom: 0.8rem;
+    }
+
+    .side-list {
+      list-style: none;
+    }
+
+    .side-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .side-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .side-list strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--graphite);
+      line-height: 1.4;
+    }
+
+    .side-list span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--steel);
+      margin-top: 0.15rem;
+    }
+
+    .side-card .team-creds {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .side-card.dark {
+      background: var(--graphite);
+      color: var(--white);
+    }
+
+    .side-card.dark h3 {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .side-mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.92rem;
+      color: var(--white);
+      word-break: break-all;
+    }
+
+    .side-mail svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--amber);
+    }
+
+    .side-mail:hover {
+      color: var(--amber);
+    }
+
+    .profile-nav {
+      background: var(--white);
+      border-top: 1px solid var(--light-grey);
+    }
+
+    .profile-nav-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+    }
+
+    .pn {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 2rem 0;
+      transition: color 0.2s;
+    }
+
+    .pn.all {
+      align-items: center;
+      text-align: center;
+    }
+
+    .pn.next {
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .pn-k {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    .pn-v {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--graphite);
+      transition: color 0.2s;
+    }
+
+    .pn:hover .pn-v {
+      color: var(--amber);
     }
 
     /* ---------- SERVICES ---------- */
@@ -1819,9 +2317,6 @@
       border-top: 3px solid var(--amber);
     }
 
-    .team-grid + .note {
-      margin-top: 2.5rem;
-    }
 
     .project-grid {
       display: grid;
@@ -2200,6 +2695,10 @@
     }
 
     @media (max-width: 1200px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .services-grid {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -2271,13 +2770,7 @@
         gap: 1.2rem;
       }
 
-      .team-info {
-        padding: 1.2rem 1.1rem 1.4rem;
-      }
 
-      .team-info h3 {
-        font-size: 1.1rem;
-      }
 
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2549,6 +3042,80 @@
       }
     }
 
+    /* people + profiles */
+    @media (max-width: 1024px) {
+      .profile-hero-grid,
+      .profile-body {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .profile-photo {
+        max-width: 320px;
+      }
+
+      .profile-side {
+        position: static;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+      .team-grid.directors {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-hero {
+        padding: 3rem 0 3.5rem;
+      }
+
+      .profile-photo {
+        max-width: 260px;
+      }
+
+      .profile-stats {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+
+      .stat {
+        display: flex;
+        align-items: baseline;
+        gap: 0.8rem;
+      }
+
+      .stat .v {
+        margin-bottom: 0;
+        min-width: 4.8rem;
+      }
+
+      .profile-actions .btn {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+
+      .profile-nav-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pn.all {
+        display: none;
+      }
+
+      .join-card {
+        grid-column: span 1;
+        min-height: 340px;
+      }
+
+      .join-body {
+        padding: 1.8rem;
+      }
+
+      .person-photo {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
     /* phones: stack the hero buttons full width, single-column grids */
     @media (max-width: 600px) {
       .services-grid,
@@ -2565,9 +3132,6 @@
         padding: 1.8rem 1.5rem;
       }
 
-      .team-photo {
-        aspect-ratio: 1 / 1;
-      }
 
       .service-card,
       .service-card.wide,
@@ -2653,6 +3217,8 @@
         },
         "image": "https://wakefieldmines-prog.github.io/wakefield-website/images/og-image.jpg",
         "email": "info@wakefieldmines.com",
+        "telephone": "+233 50 423 6317",
+        "openingHours": "Mo-Fr 09:00-17:00",
         "slogan": "Trust, Partnership and Efficiency",
         "address": {
           "@type": "PostalAddress",
@@ -2691,7 +3257,7 @@
             <ul class="dropdown">
               <li><a href="#" data-page="about">Company Overview</a></li>
               <li><a href="#" data-page="about">Vision & Mission</a></li>
-              <li><a href="#" data-page="about">Our Team</a></li>
+              <li><a href="#" data-page="people">Our People</a></li>
               <li><a href="#" data-page="sustainability">Sustainability & Community</a></li>
             </ul>
           </li>
@@ -2731,6 +3297,7 @@
     <ul>
       <li><a href="#" data-page="home">Home</a></li>
       <li><a href="#" data-page="about">About Us</a></li>
+      <li><a href="#" data-page="people">Our People</a></li>
       <li><a href="#" data-page="services">Services</a></li>
       <li><a href="#" data-page="projects">Projects</a></li>
       <li><a href="#" data-page="equipment">Equipment</a></li>
@@ -2777,7 +3344,7 @@
             <a href="#" class="btn btn-ghost" data-page="about">Learn More About Wakefield</a>
           </div>
           <div class="who-right">
-            <img class="who-image" src="images/site/ghana-mine-site-team.jpg" alt="Site team in hard hats and high-visibility vests overlooking an open-pit mine in Ghana" loading="lazy">
+            <img class="who-image" src="images/site/wakefield-site-team.jpg" alt="Wakefield team in high-visibility vests discussing work on site" loading="lazy">
             <div class="who-caption">
               <span>Operational planning & site management</span>
               <span class="num">01 / 04</span>
@@ -2788,42 +3355,53 @@
     </section>
 
     <!-- TEAM -->
-    <!-- Replace each card's photo (images/team/...), role, name and bio with verified details. -->
     <section class="section-team" id="team">
       <div class="container">
         <div class="team-header">
           <div>
-            <span class="section-label">Our Team</span>
-            <h2 class="h2">The People Behind the Operation.</h2>
+            <span class="section-label">Directors &amp; Team</span>
+            <h2 class="h2">Our People.</h2>
           </div>
-          <p>Experienced professionals bringing engineering, legal and financial expertise to every project.</p>
+          <div class="team-header-side">
+            <p>Directors and professionals bringing mining, engineering, legal and financial expertise to every project.</p>
+            <a href="#" class="btn btn-ghost" data-page="people">Meet Our People</a>
+          </div>
         </div>
         <div class="team-grid">
-          <article class="team-card">
-            <img class="team-photo" src="images/team/munir-saeed.svg" alt="Munir Hadi Kwesi Saeed" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Civil &amp; Petroleum Engineer</span>
-              <h3>Munir Hadi Kwesi Saeed</h3>
-              <p>A civil engineer with more than a decade of construction, engineering and project management experience in Ghana. He has overseen structural designs and managed civil engineering works on over 100 multi-storey apartments in the Greater Accra Region, and leads an engineering, consultancy and oil and gas services firm.</p>
-              <ul class="team-creds"><li>BSc Civil Engineering — KNUST</li><li>MSc Petroleum Engineering — Heriot-Watt</li></ul>
-            </div>
-          </article>
-          <article class="team-card">
-            <img class="team-photo" src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Solicitor &amp; Barrister</span>
+          <article class="person-card" data-page="people-osman" role="link" tabindex="0" aria-label="View profile: Osman Ainoo Gyan">
+            <div class="person-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
               <h3>Osman Ainoo Gyan</h3>
-              <p>A Solicitor and Barrister of the Supreme Court of Ghana with more than ten years of legal experience. He specialises in negotiating, drafting and reviewing contracts, civil litigation and legal risk analysis, and advises individual and corporate clients.</p>
-              <ul class="team-creds"><li>LLB — KNUST</li><li>LLM Oil &amp; Gas Law — Aberdeen</li><li>Member, Ghana Bar Association</li></ul>
+              <p class="person-title">Solicitor &amp; Barrister</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
-          <article class="team-card">
-            <img class="team-photo" src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Chartered Accountant</span>
+          <article class="person-card" data-page="people-munir" role="link" tabindex="0" aria-label="View profile: Munir Hadi Kwesi Saeed">
+            <div class="person-photo"><img src="images/team/munir-saeed.jpg" alt="Munir Hadi Kwesi Saeed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Munir Hadi Kwesi Saeed</h3>
+              <p class="person-title">Civil Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-kwadwo" role="link" tabindex="0" aria-label="View profile: Kwadwo Opoku Ansah">
+            <div class="person-photo"><img src="images/team/kwadwo-opoku-ansah.jpg" alt="Kwadwo Opoku Ansah" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Kwadwo Opoku Ansah</h3>
+              <p class="person-title">Mining Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-sarpong" role="link" tabindex="0" aria-label="View profile: Sarpong Mohammed">
+            <div class="person-photo"><img src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Finance &amp; Assurance</span>
               <h3>Sarpong Mohammed</h3>
-              <p>A finance and internal control expert with over fifteen years’ experience in accounting and internal audit. He is a Chartered Accountant and a member in good standing of the Institute of Chartered Accountants, Ghana (ICAG). Formerly with the Ghana Broadcasting Corporation, he is currently a Senior Internal Auditor with the West African Examinations Council (WAEC).</p>
-              <ul class="team-creds"><li>Chartered Accountant — ICAG</li><li>MPhil Finance &amp; Investment — KNUST</li><li>B.Com — UCC</li><li>CISA Training — GIMPA</li></ul>
+              <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
         </div>
@@ -3157,7 +3735,7 @@
   <!-- ========== ABOUT PAGE ========== -->
   <main id="page-about" class="page-content">
     <section class="page-hero has-image">
-      <div class="page-hero-bg"><img src="images/site/ghana-mine-site-team.jpg" alt="" loading="lazy"></div>
+      <div class="page-hero-bg"><img src="images/site/wakefield-site-briefing.jpg" alt="" loading="lazy"></div>
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><span aria-current="page">About Us</span></nav>
         <h1>Built for the Demands of Modern Mining.</h1>
@@ -3236,43 +3814,53 @@
     </section>
     <section class="pg-section white">
       <div class="container">
-        <div class="section-head">
-          <span class="section-label">Our Team</span>
-          <h2 class="h2">The People Behind the Operation.</h2>
-          <p class="body-lg">Experienced professionals bringing engineering, legal and financial expertise to every project.</p>
+        <div class="team-header">
+          <div>
+            <span class="section-label">Directors &amp; Team</span>
+            <h2 class="h2">Our People.</h2>
+          </div>
+          <div class="team-header-side">
+            <p>Directors and professionals bringing mining, engineering, legal and financial expertise to every project.</p>
+            <a href="#" class="btn btn-ghost" data-page="people">Meet Our People</a>
+          </div>
         </div>
         <div class="team-grid">
-          <article class="team-card">
-            <img class="team-photo" src="images/team/munir-saeed.svg" alt="Munir Hadi Kwesi Saeed" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Civil &amp; Petroleum Engineer</span>
-              <h3>Munir Hadi Kwesi Saeed</h3>
-              <p>A civil engineer with more than a decade of construction, engineering and project management experience in Ghana. He has overseen structural designs and managed civil engineering works on over 100 multi-storey apartments in the Greater Accra Region, and leads an engineering, consultancy and oil and gas services firm.</p>
-              <ul class="team-creds"><li>BSc Civil Engineering — KNUST</li><li>MSc Petroleum Engineering — Heriot-Watt</li></ul>
-            </div>
-          </article>
-          <article class="team-card">
-            <img class="team-photo" src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Solicitor &amp; Barrister</span>
+          <article class="person-card" data-page="people-osman" role="link" tabindex="0" aria-label="View profile: Osman Ainoo Gyan">
+            <div class="person-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
               <h3>Osman Ainoo Gyan</h3>
-              <p>A Solicitor and Barrister of the Supreme Court of Ghana with more than ten years of legal experience. He specialises in negotiating, drafting and reviewing contracts, civil litigation and legal risk analysis, and advises individual and corporate clients.</p>
-              <ul class="team-creds"><li>LLB — KNUST</li><li>LLM Oil &amp; Gas Law — Aberdeen</li><li>Member, Ghana Bar Association</li></ul>
+              <p class="person-title">Solicitor &amp; Barrister</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
-          <article class="team-card">
-            <img class="team-photo" src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy">
-            <div class="team-info">
-              <span class="team-role">Chartered Accountant</span>
+          <article class="person-card" data-page="people-munir" role="link" tabindex="0" aria-label="View profile: Munir Hadi Kwesi Saeed">
+            <div class="person-photo"><img src="images/team/munir-saeed.jpg" alt="Munir Hadi Kwesi Saeed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Munir Hadi Kwesi Saeed</h3>
+              <p class="person-title">Civil Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-kwadwo" role="link" tabindex="0" aria-label="View profile: Kwadwo Opoku Ansah">
+            <div class="person-photo"><img src="images/team/kwadwo-opoku-ansah.jpg" alt="Kwadwo Opoku Ansah" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Kwadwo Opoku Ansah</h3>
+              <p class="person-title">Mining Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-sarpong" role="link" tabindex="0" aria-label="View profile: Sarpong Mohammed">
+            <div class="person-photo"><img src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Finance &amp; Assurance</span>
               <h3>Sarpong Mohammed</h3>
-              <p>A finance and internal control expert with over fifteen years’ experience in accounting and internal audit. He is a Chartered Accountant and a member in good standing of the Institute of Chartered Accountants, Ghana (ICAG). Formerly with the Ghana Broadcasting Corporation, he is currently a Senior Internal Auditor with the West African Examinations Council (WAEC).</p>
-              <ul class="team-creds"><li>Chartered Accountant — ICAG</li><li>MPhil Finance &amp; Investment — KNUST</li><li>B.Com — UCC</li><li>CISA Training — GIMPA</li></ul>
+              <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
-        </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>Profiles are based on information supplied by each team member, published with their permission. Photographs for the remaining profiles will be added once supplied.</p>
         </div>
       </div>
     </section>
@@ -3626,7 +4214,7 @@
             </div>
           </div>
           <div class="split-media">
-            <img src="images/site/ghana-site-visit.jpg" alt="Team in personal protective equipment at a mine site in Ghana" loading="lazy">
+            <img src="images/site/wakefield-site-briefing.jpg" alt="Wakefield team in high-visibility vests and hard hats during a site briefing" loading="lazy">
           </div>
         </div>
       </div>
@@ -3740,7 +4328,7 @@
             </div>
           </div>
           <div class="split-media">
-            <img src="images/site/ghana-mine-site-team.jpg" alt="Site team in hard hats overlooking an open-pit mine in Ghana" loading="lazy">
+            <img src="images/site/wakefield-site-handshake.jpg" alt="Wakefield team members greeting on site" loading="lazy">
           </div>
         </div>
         <div class="note">
@@ -3762,7 +4350,7 @@
   <!-- ========== CAREERS PAGE ========== -->
   <main id="page-careers" class="page-content">
     <section class="page-hero has-image">
-      <div class="page-hero-bg"><img src="images/site/ghana-site-visit.jpg" alt="" loading="lazy"></div>
+      <div class="page-hero-bg"><img src="images/site/wakefield-site-team.jpg" alt="" loading="lazy"></div>
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><span aria-current="page">Careers</span></nav>
         <h1>Build Your Career with Wakefield.</h1>
@@ -3798,7 +4386,7 @@
       <div class="container">
         <div class="split">
           <div class="split-media">
-            <img src="images/site/ghana-mine-site-team.jpg" alt="Site team in hard hats overlooking an open-pit mine" loading="lazy">
+            <img src="images/site/wakefield-site-visit.jpg" alt="Wakefield team on site in high-visibility vests" loading="lazy">
           </div>
           <div>
         <div class="section-head">
@@ -3903,8 +4491,8 @@
             <ul class="contact-list">
               <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><strong>Office</strong><span>Accra, Ghana</span><span class="tbc">To be confirmed</span></div></li>
               <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><div><strong>Email</strong><a href="mailto:info@wakefieldmines.com">info@wakefieldmines.com</a></div></li>
-              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><strong>Telephone</strong><span class="tbc">To be confirmed</span></div></li>
-              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><strong>Office Hours</strong><span class="tbc">To be confirmed</span></div></li>
+              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><strong>Telephone</strong><a href="tel:+233504236317">+233 50 423 6317</a></div></li>
+              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><strong>Office Hours</strong><span>Monday – Friday</span><span>9:00 am – 5:00 pm (GMT)</span></div></li>
             </ul>
           </div>
           <div class="form-card">
@@ -3950,6 +4538,403 @@
     </section>
   </main>
 
+  <!-- ========== OUR PEOPLE PAGE ========== -->
+  <main id="page-people" class="page-content">
+    <section class="page-hero has-image">
+      <div class="page-hero-bg"><img src="images/site/wakefield-site-handshake.jpg" alt="" loading="lazy"></div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="about">About</a><span aria-hidden="true">/</span><span aria-current="page">Our People</span></nav>
+        <h1>Our People.</h1>
+        <p>The directors and professionals behind Wakefield Mines and Construction Limited — combining mining, engineering, legal and financial expertise.</p>
+      </div>
+    </section>
+    <section class="pg-section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Leadership</span>
+          <h2 class="h2">Board of Directors.</h2>
+          <p class="body-lg">Accountable for strategy, safety and delivery across every Wakefield operation.</p>
+        </div>
+        <div class="team-grid directors">
+          <article class="person-card" data-page="people-osman" role="link" tabindex="0" aria-label="View profile: Osman Ainoo Gyan">
+            <div class="person-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Osman Ainoo Gyan</h3>
+              <p class="person-title">Solicitor &amp; Barrister</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-munir" role="link" tabindex="0" aria-label="View profile: Munir Hadi Kwesi Saeed">
+            <div class="person-photo"><img src="images/team/munir-saeed.jpg" alt="Munir Hadi Kwesi Saeed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Munir Hadi Kwesi Saeed</h3>
+              <p class="person-title">Civil Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-kwadwo" role="link" tabindex="0" aria-label="View profile: Kwadwo Opoku Ansah">
+            <div class="person-photo"><img src="images/team/kwadwo-opoku-ansah.jpg" alt="Kwadwo Opoku Ansah" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Director</span>
+              <h3>Kwadwo Opoku Ansah</h3>
+              <p class="person-title">Mining Engineer</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Our Team</span>
+          <h2 class="h2">Expertise Behind the Board.</h2>
+        </div>
+        <div class="team-grid directors">
+          <article class="person-card" data-page="people-sarpong" role="link" tabindex="0" aria-label="View profile: Sarpong Mohammed">
+            <div class="person-photo"><img src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">Finance &amp; Assurance</span>
+              <h3>Sarpong Mohammed</h3>
+              <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <a href="#" class="join-card" data-page="careers">
+            <img src="images/site/wakefield-site-team.jpg" alt="" loading="lazy">
+            <span class="join-body">
+              <span class="person-role">Careers</span>
+              <span class="join-title">Build Your Career with Wakefield.</span>
+              <span class="join-text">We are always interested in hearing from skilled and motivated professionals who share our commitment to safety and operational excellence.</span>
+              <span class="person-link">View careers <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section-cta">
+      <div class="cta-bg"><img src="images/site/wakefield-site-briefing.jpg" alt="" loading="lazy"></div>
+      <div class="container">
+        <h2 class="h2">Talk to Our Team.</h2>
+        <p>Speak with us about your mining, construction and operational requirements.</p>
+        <a href="#" class="btn btn-primary" data-page="contact">Contact Us</a>
+      </div>
+    </section>
+  </main>
+  <!-- ========== PROFILE: OSMAN AINOO GYAN ========== -->
+  <main id="page-people-osman" class="page-content">
+    <section class="profile-hero">
+      <div class="container profile-hero-grid">
+        <div class="profile-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
+        <div class="profile-intro">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="people">Our People</a><span aria-hidden="true">/</span><span aria-current="page">Osman Ainoo Gyan</span></nav>
+          <span class="person-role">Director</span>
+          <h1>Osman Ainoo Gyan</h1>
+          <p class="profile-title">Solicitor &amp; Barrister</p>
+          <p class="profile-lead">A Solicitor and Barrister of the Supreme Court of Ghana, bringing more than a decade of legal practice in contracts, litigation and legal risk to the Wakefield board.</p>
+          <div class="profile-stats"><div class="stat"><span class="v">10+</span><span class="k">Years in legal practice</span></div><div class="stat"><span class="v">B.L.</span><span class="k">Called to the Bar, 2015</span></div><div class="stat"><span class="v">LLM</span><span class="k">Oil &amp; Gas Law</span></div></div>
+          <div class="profile-actions"><a href="mailto:osman@wakefieldmining.com" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Osman</a><a href="#" class="btn btn-outline" data-page="people">All People</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section">
+      <div class="container profile-body">
+        <div class="profile-main">
+          <h2 class="profile-h">Profile</h2>
+          <p>Osman Ainoo Gyan is a Solicitor and Barrister of the Supreme Court of Ghana with more than ten years of legal experience, including private legal practice focused on drafting and reviewing contracts and other legal documents, preparing court processes and legal risk analysis.</p>
+          <p>His work spans civil litigation in trial and appellate courts, negotiation and dispute resolution, conveyancing, and regular advisory work for individual and corporate clients. With a postgraduate qualification in oil and gas law, he brings a strong understanding of the legal frameworks that govern Ghana’s extractive sector.</p>
+          <h2 class="profile-h">Career</h2>
+          <ol class="timeline">
+            <li>
+              <span class="t-date">2015 – Present</span>
+              <h3>Associate Counsel</h3>
+              <span class="t-org">Agyemang &amp; Associates, Accra</span>
+              <p>Negotiates, drafts and reviews contracts and agreements; prosecutes and defends civil suits in trial and appellate courts; prepares briefs and pleadings; drafts deeds, mortgages and leases; and advises individual and corporate clients.</p>
+            </li>
+            <li>
+              <span class="t-date">2014</span>
+              <h3>Legal Intern</h3>
+              <span class="t-org">Attorney General’s Office, Ministry of Justice, Kumasi</span>
+              <p>Supported legal advice to the Police and other state agencies, prepared briefs and weekly reports, and attended court.</p>
+            </li>
+            <li>
+              <span class="t-date">2011 – 2012</span>
+              <h3>Legal Intern</h3>
+              <span class="t-org">Totoe Legal Service, Accra</span>
+              <p>Provided pro bono legal advice and services to vulnerable groups, including widows, victims of crime and persons with disabilities.</p>
+            </li>
+          </ol>
+          <h2 class="profile-h">Publications</h2>
+          <ul class="pub-list"><li>“The Interpretation of Mutual Hold Harmless and Indemnity Clauses: A Cautionary Direction for the Ghanaian Courts” — (2015) 3 Ghana School of Law Students’ Journal 60</li><li>“Manning the Oil Goal-Post: Minister’s Powers — Unfettered Discretion in the Award of Oil Licences in Ghana” — The Finder, June 2018</li><li>“All Bark and No Bite: P.I.A.C. as a Watchdog” — Public Interest and Accountability Committee, June 2018</li></ul>
+        </div>
+        <aside class="profile-side">
+          <div class="side-card">
+            <h3>Education &amp; Qualifications</h3>
+            <ul class="side-list"><li><strong>Barrister at Law (B.L.)</strong><span>Ghana School of Law · 2015</span></li><li><strong>LLM, Oil and Gas Law</strong><span>University of Aberdeen · 2013</span></li><li><strong>LLB (Second Class Upper)</strong><span>Kwame Nkrumah University of Science and Technology · 2011</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Affiliations</h3>
+            <ul class="side-list"><li><strong>Member, Ghana Bar Association</strong></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Expertise</h3>
+            <ul class="team-creds"><li>Contracts &amp; Agreements</li><li>Civil Litigation</li><li>Legal Risk Analysis</li><li>Dispute Resolution</li><li>Oil &amp; Gas Law</li><li>Conveyancing</li></ul>
+          </div>
+            <div class="side-card dark">
+              <h3>Contact</h3>
+              <a class="side-mail" href="mailto:osman@wakefieldmining.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>osman@wakefieldmining.com</a>
+            </div>
+        </aside>
+      </div>
+    </section>
+    <nav class="profile-nav" aria-label="More profiles">
+      <div class="container profile-nav-grid">
+        <a href="#" data-page="people-sarpong" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Sarpong Mohammed</span></a>
+        <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
+        <a href="#" data-page="people-munir" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Munir Hadi Kwesi Saeed</span></a>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ========== PROFILE: MUNIR HADI KWESI SAEED ========== -->
+  <main id="page-people-munir" class="page-content">
+    <section class="profile-hero">
+      <div class="container profile-hero-grid">
+        <div class="profile-photo"><img src="images/team/munir-saeed.jpg" alt="Munir Hadi Kwesi Saeed" loading="lazy"></div>
+        <div class="profile-intro">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="people">Our People</a><span aria-hidden="true">/</span><span aria-current="page">Munir Hadi Kwesi Saeed</span></nav>
+          <span class="person-role">Director</span>
+          <h1>Munir Hadi Kwesi Saeed</h1>
+          <p class="profile-title">Civil Engineer</p>
+          <p class="profile-lead">A civil engineer with more than a decade of construction, structural engineering, project management and oil and gas services experience in Ghana.</p>
+          <div class="profile-stats"><div class="stat"><span class="v">10+</span><span class="k">Years in engineering</span></div><div class="stat"><span class="v">100+</span><span class="k">Apartments delivered</span></div><div class="stat"><span class="v">MSc</span><span class="k">Petroleum Engineering</span></div></div>
+          <div class="profile-actions"><a href="mailto:saeed@wakefieldmining.com" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Munir</a><a href="#" class="btn btn-outline" data-page="people">All People</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section">
+      <div class="container profile-body">
+        <div class="profile-main">
+          <h2 class="profile-h">Profile</h2>
+          <p>Munir Hadi Kwesi Saeed is a civil engineer with more than a decade of experience across construction, structural engineering, project management and oil and gas services in Ghana.</p>
+          <p>He has overseen structural designs and managed civil engineering works on more than 100 multi-storey apartments in the Greater Accra Region, leads an engineering, consultancy and oil and gas services firm, and manages rural water infrastructure projects in Ghana’s Northern Region.</p>
+          <h2 class="profile-h">Career</h2>
+          <ol class="timeline">
+            <li>
+              <span class="t-date">2020 – Present</span>
+              <h3>Co-Founder &amp; Chief Finance Officer</h3>
+              <span class="t-org">Shelta Space Limited</span>
+              <p>Modular housing built from engineered wood and other environmentally friendly materials. Delivered 14 modular housing units and a restaurant at Kokrobite, Accra, and oversees engineering design and project management.</p>
+            </li>
+            <li>
+              <span class="t-date">2015 – Present</span>
+              <h3>Managing Director</h3>
+              <span class="t-org">Mercury Heights Limited</span>
+              <p>Consultancy, engineering and oil and gas services, including offshore logistics for oil and gas firms and the review and authentication of structural designs.</p>
+            </li>
+            <li>
+              <span class="t-date">2013 – Present</span>
+              <h3>Country Manager, Water for Life – Ghana</h3>
+              <span class="t-org">International Association of Ahmadi Architects &amp; Engineers</span>
+              <p>Pipe network design and field implementation for rural water projects, including a model village project in Jakpa, Northern Region, and the mechanisation of dozens of boreholes.</p>
+            </li>
+            <li>
+              <span class="t-date">2012 – 2015</span>
+              <h3>Co-Founder &amp; Site Engineer</h3>
+              <span class="t-org">Enstar Ghana Limited</span>
+              <p>Managed civil engineering works and structural designs on all sites, including over 100 multi-storey apartments at Klagon and Tema, Greater Accra Region.</p>
+            </li>
+          </ol>
+        </div>
+        <aside class="profile-side">
+          <div class="side-card">
+            <h3>Education &amp; Qualifications</h3>
+            <ul class="side-list"><li><strong>MSc Petroleum Engineering</strong><span>Heriot-Watt University, Edinburgh · 2012</span></li><li><strong>BSc Civil Engineering (Second Class Upper)</strong><span>Kwame Nkrumah University of Science and Technology · 2010</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Affiliations</h3>
+            <ul class="side-list"><li><strong>Volunteer Field Engineer &amp; Project Manager, Water for Life</strong></li><li><strong>Volunteer, Humanity First rural development projects</strong></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Expertise</h3>
+            <ul class="team-creds"><li>Structural Engineering</li><li>Civil Works</li><li>Project Management</li><li>Petroleum Engineering</li><li>Water Infrastructure</li><li>AutoCAD &amp; ArchiCAD</li></ul>
+          </div>
+            <div class="side-card dark">
+              <h3>Contact</h3>
+              <a class="side-mail" href="mailto:saeed@wakefieldmining.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>saeed@wakefieldmining.com</a>
+            </div>
+        </aside>
+      </div>
+    </section>
+    <nav class="profile-nav" aria-label="More profiles">
+      <div class="container profile-nav-grid">
+        <a href="#" data-page="people-osman" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Osman Ainoo Gyan</span></a>
+        <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
+        <a href="#" data-page="people-kwadwo" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Kwadwo Opoku Ansah</span></a>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ========== PROFILE: KWADWO OPOKU ANSAH ========== -->
+  <main id="page-people-kwadwo" class="page-content">
+    <section class="profile-hero">
+      <div class="container profile-hero-grid">
+        <div class="profile-photo"><img src="images/team/kwadwo-opoku-ansah.jpg" alt="Kwadwo Opoku Ansah" loading="lazy"></div>
+        <div class="profile-intro">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="people">Our People</a><span aria-hidden="true">/</span><span aria-current="page">Kwadwo Opoku Ansah</span></nav>
+          <span class="person-role">Director</span>
+          <h1>Kwadwo Opoku Ansah</h1>
+          <p class="profile-title">Mining Engineer</p>
+          <p class="profile-lead">A mining executive with more than 22 years of experience leading open-pit gold mining operations across West Africa, at General Manager level.</p>
+          <div class="profile-stats"><div class="stat"><span class="v">22+</span><span class="k">Years in mining</span></div><div class="stat"><span class="v">~1,200</span><span class="k">Personnel led</span></div><div class="stat"><span class="v">US$17M</span><span class="k">Life-of-mine savings delivered</span></div></div>
+          <div class="profile-actions"><a href="mailto:kwadwo@wakefieldmining.com" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email Kwadwo</a><a href="#" class="btn btn-outline" data-page="people">All People</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section">
+      <div class="container profile-body">
+        <div class="profile-main">
+          <h2 class="profile-h">Profile</h2>
+          <p>Kwadwo Opoku Ansah is a mining executive with more than 22 years of experience leading gold mining operations across West Africa, including at General Manager level with accountability for around 1,200 personnel and budgets exceeding US$200 million.</p>
+          <p>He specialises in turning around underperforming mining assets, restoring profitability and delivering sustainable performance through strategic mine planning, cost optimisation and resource extension. His experience covers the full mining lifecycle — exploration, production, ESG and stakeholder management — with a strong focus on building high-performing teams.</p>
+          <h2 class="profile-h">Career</h2>
+          <ol class="timeline">
+            <li>
+              <span class="t-date">2024 – 2026</span>
+              <h3>General Manager</h3>
+              <span class="t-org">Adamus Resources Limited, Ghana</span>
+              <p>Led full mining operations across four mining leases and nine exploration licences. Improved safety leading indicators by 150%, restructured exploration strategy to extend mine life, saved around US$300,000 a year through workforce planning, and launched graduate trainee and apprenticeship programmes.</p>
+            </li>
+            <li>
+              <span class="t-date">2021 – 2024</span>
+              <h3>Mining Manager</h3>
+              <span class="t-org">Endeavour Mining — Boungou &amp; Karma, Burkina Faso</span>
+              <p>Led the turnaround of an underperforming operation, reduced mechanical dilution by more than 15%, and extended the Karma mine life by around 1.5 years through brownfield exploration.</p>
+            </li>
+            <li>
+              <span class="t-date">2013 – 2021</span>
+              <h3>Technical Services Manager, then Mining Manager</h3>
+              <span class="t-org">Endeavour Mining — Agbaou, Côte d’Ivoire</span>
+              <p>Delivered around US$17 million in life-of-mine savings through haulage optimisation and in-pit dumping, and halved grade variance from ~20% to ~10% through improved reconciliation.</p>
+            </li>
+            <li>
+              <span class="t-date">2009 – 2013</span>
+              <h3>Chief Mining Engineer, then Acting Mine Manager</h3>
+              <span class="t-org">Etruscan Resources &amp; Endeavour Mining — Youga, Burkina Faso</span>
+              <p>Progressed through technical and operational leadership roles, managing full mining operations during a leadership transition.</p>
+            </li>
+            <li>
+              <span class="t-date">2003 – 2009</span>
+              <h3>Planning &amp; Mining Engineer</h3>
+              <span class="t-org">Gold Fields Tarkwa · AngloGold Ashanti Obuasi · Holman Ghana</span>
+              <p>Short-term planning and production control for large open-pit operations, underground technical support, and heavy mining equipment solutions.</p>
+            </li>
+          </ol>
+        </div>
+        <aside class="profile-side">
+          <div class="side-card">
+            <h3>Education &amp; Qualifications</h3>
+            <ul class="side-list"><li><strong>Executive MBA (in progress)</strong><span>University of Cumbria, United Kingdom</span></li><li><strong>MSc Mining Engineering</strong><span>University of Mines and Technology, Tarkwa</span></li><li><strong>Management Development Programme</strong><span>University of Stellenbosch, South Africa</span></li><li><strong>BSc Mining Engineering</strong><span>University of Mines and Technology, Tarkwa</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Affiliations</h3>
+            <ul class="side-list"><li><strong>Fellow, Australasian Institute of Mining and Metallurgy (FAusIMM)</strong></li><li><strong>Fellow, West African Institute of Mining, Metallurgy and Petroleum (FWAIMM)</strong></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Expertise</h3>
+            <ul class="team-creds"><li>Open-Pit Operations</li><li>Mine Planning</li><li>Operational Turnarounds</li><li>Cost Optimisation</li><li>Resource Growth</li><li>Safety &amp; ESG</li></ul>
+          </div>
+            <div class="side-card dark">
+              <h3>Contact</h3>
+              <a class="side-mail" href="mailto:kwadwo@wakefieldmining.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>kwadwo@wakefieldmining.com</a>
+            </div>
+        </aside>
+      </div>
+    </section>
+    <nav class="profile-nav" aria-label="More profiles">
+      <div class="container profile-nav-grid">
+        <a href="#" data-page="people-munir" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Munir Hadi Kwesi Saeed</span></a>
+        <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
+        <a href="#" data-page="people-sarpong" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Sarpong Mohammed</span></a>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ========== PROFILE: SARPONG MOHAMMED ========== -->
+  <main id="page-people-sarpong" class="page-content">
+    <section class="profile-hero">
+      <div class="container profile-hero-grid">
+        <div class="profile-photo"><img src="images/team/sarpong-mohammed.jpg" alt="Sarpong Mohammed" loading="lazy"></div>
+        <div class="profile-intro">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="people">Our People</a><span aria-hidden="true">/</span><span aria-current="page">Sarpong Mohammed</span></nav>
+          <span class="person-role">Finance &amp; Assurance</span>
+          <h1>Sarpong Mohammed</h1>
+          <p class="profile-title">Chartered Accountant</p>
+          <p class="profile-lead">A finance and internal control expert with over fifteen years’ experience in accounting and internal audit across public sector and international institutions.</p>
+          <div class="profile-stats"><div class="stat"><span class="v">15+</span><span class="k">Years in audit &amp; finance</span></div><div class="stat"><span class="v">CA</span><span class="k">Chartered Accountant, ICAG</span></div><div class="stat"><span class="v">MPhil</span><span class="k">Finance &amp; Investment</span></div></div>
+          <div class="profile-actions"><a href="#" class="btn btn-outline" data-page="people">All People</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section">
+      <div class="container profile-body">
+        <div class="profile-main">
+          <h2 class="profile-h">Profile</h2>
+          <p>Sarpong Mohammed is a finance and internal control expert with over fifteen years’ experience in accounting and internal audit. He is a Chartered Accountant and a member in good standing of the Institute of Chartered Accountants, Ghana (ICAG).</p>
+          <p>He is experienced in financial, operational and special audits, regulatory compliance, fraud investigation and the review of information systems against international standards — and is known for discretion, attention to detail and leading audit teams to high-quality outcomes.</p>
+          <h2 class="profile-h">Career</h2>
+          <ol class="timeline">
+            <li>
+              <span class="t-date">2019 – Present</span>
+              <h3>Senior Internal Auditor</h3>
+              <span class="t-org">The West African Examinations Council (WAEC), Accra</span>
+              <p>Leads financial and operational audits, including payroll control reviews and risk assessments; reviews bank reconciliations and high-volume financial data; and mentors junior audit staff.</p>
+            </li>
+            <li>
+              <span class="t-date">2016 – 2019</span>
+              <h3>Finance Manager, TV Licence Department</h3>
+              <span class="t-org">Ghana Broadcasting Corporation, Accra</span>
+              <p>Managed financial set-up and reporting for the donor-funded TV licence project, and reconciled nationwide electronic collections across mobile money, USSD and other payment channels.</p>
+            </li>
+            <li>
+              <span class="t-date">2010 – 2016</span>
+              <h3>Assistant Audit Manager</h3>
+              <span class="t-org">Ghana Broadcasting Corporation, Accra</span>
+              <p>Planned and led audits, reviewed internal controls across revenue and payments, and carried out special, value-for-money and forensic audits.</p>
+            </li>
+          </ol>
+          <h2 class="profile-h">Key Accomplishments</h2>
+          <ul class="check-list"><li>Helped design and implement the collection of TV licence fees through electronic platforms in Ghana</li><li>Provided financial oversight for USAID Justice Sector Support and CCF-OSIWA projects worth GH₵1.05M and US$150,000</li><li>Led fraud investigations that protected the Ghana Broadcasting Corporation from financial loss</li></ul>
+          <h2 class="profile-h">Publications</h2>
+          <ul class="pub-list"><li>“Relationship Between Exchange Rate Volatility and Interest Rates — Evidence from Ghana” — Cogent Economics &amp; Finance, 2021</li></ul>
+        </div>
+        <aside class="profile-side">
+          <div class="side-card">
+            <h3>Education &amp; Qualifications</h3>
+            <ul class="side-list"><li><strong>Chartered Accountant (CA)</strong><span>Institute of Chartered Accountants, Ghana · 2016</span></li><li><strong>CISA Training Certificate</strong><span>GIMPA · 2026</span></li><li><strong>MPhil Industrial Finance &amp; Investment</strong><span>Kwame Nkrumah University of Science and Technology · 2018</span></li><li><strong>B.Com — Accounting, Audit &amp; Economics</strong><span>University of Cape Coast · 2009</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Affiliations</h3>
+            <ul class="side-list"><li><strong>Member in good standing, ICAG</strong></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Expertise</h3>
+            <ul class="team-creds"><li>Internal Audit</li><li>Financial Control</li><li>Risk &amp; Compliance</li><li>Fraud Investigation</li><li>IT Systems Audit</li><li>Financial Reporting</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <nav class="profile-nav" aria-label="More profiles">
+      <div class="container profile-nav-grid">
+        <a href="#" data-page="people-kwadwo" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Kwadwo Opoku Ansah</span></a>
+        <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
+        <a href="#" data-page="people-osman" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Osman Ainoo Gyan</span></a>
+      </div>
+    </nav>
+  </main>
+
   <!-- ========== PHOTO CREDITS PAGE ========== -->
   <main id="page-credits" class="page-content">
     <section class="page-hero">
@@ -3963,7 +4948,6 @@
       <div class="container">
         <ul class="credits">
           <li><a href="https://commons.wikimedia.org/wiki/File:Damang_Gold_Mine_01.jpg" target="_blank" rel="noopener">Damang Gold Mine 01</a> by Enock4seth, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-          <li><a href="https://commons.wikimedia.org/wiki/File:EITI_NGGL_AhafoMine_2008_006_B002.jpg" target="_blank" rel="noopener">EITI NGGL AhafoMine 2008 006 B002</a> by The EITI, <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:EITI_NGGL_AhafoMine_2008_003_B002.jpg" target="_blank" rel="noopener">EITI NGGL AhafoMine 2008 003 B002</a> by The EITI, <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Gold_Mining_in_Ashanti_Region_(Ashanti).jpg" target="_blank" rel="noopener">Gold Mining in Ashanti Region (Ashanti)</a> by EITI, <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:EITI_NGGL_AhafoMine_2008_005_B002.jpg" target="_blank" rel="noopener">EITI NGGL AhafoMine 2008 005 B002</a> by The EITI, <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener">CC BY-SA 2.0</a></li>
@@ -3984,7 +4968,7 @@
           <li><a href="https://commons.wikimedia.org/wiki/File:Drilling_rig_(Continental_Mine,_Butte,_Montana,_USA)_6.jpg" target="_blank" rel="noopener">Drilling rig (Continental Mine, Butte, Montana, USA) 6</a> by James St. John, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
         </ul>
         <div class="placeholder-note">
-          <strong>Note:</strong> These are representative industry photographs, not images of Wakefield operations. They will be replaced with Wakefield's own project and fleet photography when supplied.
+          <strong>Note:</strong> Photographs of the Wakefield team on site are the company's own. The photographs listed above are representative industry images, not Wakefield operations, and will be replaced with Wakefield's own project and fleet photography when supplied.
         </div>
       </div>
     </div>
@@ -4005,6 +4989,7 @@
           <h4>Company</h4>
           <ul>
             <li><a href="#" data-page="about">About Us</a></li>
+            <li><a href="#" data-page="people">Our People</a></li>
             <li><a href="#" data-page="sustainability">Sustainability</a></li>
             <li><a href="#" data-page="careers">Careers</a></li>
             <li><a href="#" data-page="news">News & Insights</a></li>
@@ -4025,8 +5010,8 @@
           <h4>Contact</h4>
           <p><strong>Office:</strong> Accra, Ghana</p>
           <p><strong>Email:</strong> <a href="mailto:info@wakefieldmines.com">info@wakefieldmines.com</a></p>
-          <p><strong>Telephone:</strong> To be confirmed</p>
-          <p><strong>Office Hours:</strong> To be confirmed</p>
+          <p><strong>Telephone:</strong> <a href="tel:+233504236317">+233 50 423 6317</a></p>
+          <p><strong>Office Hours:</strong> Mon – Fri, 9:00 am – 5:00 pm</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -4090,6 +5075,8 @@
       });
 
       // history: 'push' for clicks, 'replace' for first load, 'none' for back/forward
+      const defaultTitle = document.title;
+
       function showPage(pageId, history_) {
         if (!pages[pageId]) pageId = 'home';
 
@@ -4103,6 +5090,11 @@
         document.querySelectorAll('.main-nav > li > a, .mobile-nav li a').forEach(function(a) {
           a.classList.toggle('active', a.dataset.page === pageId);
         });
+
+        const h1 = pages[pageId].querySelector('h1');
+        document.title = pageId === 'home' || !h1
+          ? defaultTitle
+          : h1.textContent.replace(/\.$/, '') + ' — Wakefield Mines and Construction';
 
         closeMobileNav();
         window.scrollTo({ top: 0, behavior: 'instant' });
