@@ -692,6 +692,28 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
+    .team-grid.five {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (max-width: 1200px) {
+      .team-grid.five {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .team-grid.five {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid.five {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .person-card {
       display: flex;
       flex-direction: column;
@@ -3363,11 +3385,11 @@
             <h2 class="h2">Our People.</h2>
           </div>
           <div class="team-header-side">
-            <p>Directors and professionals bringing mining, engineering, legal and financial expertise to every project.</p>
+            <p>Directors and professionals bringing mining, engineering, HSE, legal and financial expertise to every project.</p>
             <a href="#" class="btn btn-ghost" data-page="people">Meet Our People</a>
           </div>
         </div>
-        <div class="team-grid">
+        <div class="team-grid five">
           <article class="person-card" data-page="people-osman" role="link" tabindex="0" aria-label="View profile: Osman Ainoo Gyan">
             <div class="person-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
             <div class="person-body">
@@ -3401,6 +3423,15 @@
               <span class="person-role">Finance &amp; Assurance</span>
               <h3>Sarpong Mohammed</h3>
               <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-rashid" role="link" tabindex="0" aria-label="View profile: Gbadegbe Rashid">
+            <div class="person-photo"><img src="images/team/gbadegbe-rashid.jpg" alt="Gbadegbe Rashid" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">General Manager</span>
+              <h3>Gbadegbe Rashid</h3>
+              <p class="person-title">Engagements &amp; Business Development</p>
               <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
@@ -3692,28 +3723,28 @@
             <img src="images/site/mine-haul-trucks.jpg" alt="Haul trucks working at an open-pit mine" loading="lazy">
             <div class="news-meta">
               <span class="news-cat">Company Update</span>
-              <span class="news-date">[Date]</span>
+              <span class="news-date">Insight</span>
             </div>
-            <h3>Wakefield Advances Operational Readiness Across Mining Contract Portfolio</h3>
-            <p>Placeholder article summary — to be populated with verified company news and insights.</p>
+            <h3>Operational Readiness for Mining Contracts</h3>
+            <p>How planning, equipment availability and trained crews come together to start contracts safely and productively.</p>
           </div>
           <div class="news-card" data-page="news" role="link" tabindex="0">
             <img src="images/site/ghana-site-visit.jpg" alt="Team in personal protective equipment at a mine site in Ghana" loading="lazy">
             <div class="news-meta">
               <span class="news-cat">HSE</span>
-              <span class="news-date">[Date]</span>
+              <span class="news-date">Insight</span>
             </div>
-            <h3>Strengthening Safety Leadership: New HSE Training Initiative</h3>
-            <p>Placeholder article summary — to be populated with verified company news and insights.</p>
+            <h3>Safety Leadership on Site</h3>
+            <p>Why supervisors, toolbox talks and the authority to stop unsafe work are the foundation of a strong safety culture.</p>
           </div>
           <div class="news-card" data-page="news" role="link" tabindex="0">
             <img src="images/site/ghana-mine-ppe-team.jpg" alt="Site personnel in hard hats inspecting a pipeline at a mine in Ghana" loading="lazy">
             <div class="news-meta">
               <span class="news-cat">Community</span>
-              <span class="news-date">[Date]</span>
+              <span class="news-date">Insight</span>
             </div>
-            <h3>Local Skills Development Programme Enters New Phase</h3>
-            <p>Placeholder article summary — to be populated with verified company news and insights.</p>
+            <h3>Building Local Skills and Careers</h3>
+            <p>Our approach to recruiting, training and mentoring Ghanaian personnel at every level of the business.</p>
           </div>
         </div>
       </div>
@@ -3800,14 +3831,12 @@
           <div class="vm-card">
             <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
             <h3>Our Vision</h3>
-            <p>Vision statement to be supplied and approved by the company.</p>
-            <span class="tbc">To be confirmed</span>
+            <p>To be a trusted leader in mining services and construction in Ghana and across West Africa, recognised for safe operations, dependable delivery and lasting value for our clients, our people and our host communities.</p>
           </div>
           <div class="vm-card">
             <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
             <h3>Our Mission</h3>
-            <p>Mission statement to be supplied and approved by the company.</p>
-            <span class="tbc">To be confirmed</span>
+            <p>To deliver safe, efficient and responsible contract mining, construction and equipment solutions, built on skilled people, well-maintained equipment and clear accountability at every level.</p>
           </div>
         </div>
       </div>
@@ -3820,11 +3849,11 @@
             <h2 class="h2">Our People.</h2>
           </div>
           <div class="team-header-side">
-            <p>Directors and professionals bringing mining, engineering, legal and financial expertise to every project.</p>
+            <p>Directors and professionals bringing mining, engineering, HSE, legal and financial expertise to every project.</p>
             <a href="#" class="btn btn-ghost" data-page="people">Meet Our People</a>
           </div>
         </div>
-        <div class="team-grid">
+        <div class="team-grid five">
           <article class="person-card" data-page="people-osman" role="link" tabindex="0" aria-label="View profile: Osman Ainoo Gyan">
             <div class="person-photo"><img src="images/team/osman-gyan.svg" alt="Osman Ainoo Gyan" loading="lazy"></div>
             <div class="person-body">
@@ -3858,6 +3887,15 @@
               <span class="person-role">Finance &amp; Assurance</span>
               <h3>Sarpong Mohammed</h3>
               <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-rashid" role="link" tabindex="0" aria-label="View profile: Gbadegbe Rashid">
+            <div class="person-photo"><img src="images/team/gbadegbe-rashid.jpg" alt="Gbadegbe Rashid" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">General Manager</span>
+              <h3>Gbadegbe Rashid</h3>
+              <p class="person-title">Engagements &amp; Business Development</p>
               <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
@@ -3974,10 +4012,6 @@
             <img src="images/site/haul-truck-fleet.jpg" alt="Row of mining haul trucks" loading="lazy">
           </div>
         </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>Detailed scopes of work, equipment lists and project references for each service will be added once validated and approved by the company.</p>
-        </div>
       </div>
     </section>
     <section class="section-cta">
@@ -4013,7 +4047,7 @@
               <span class="project-category">Contract Mining</span>
               <h3>Open-Pit Operations Support</h3>
               <p>Integrated load and haul support for a large-scale open-pit operation.</p>
-              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span><span class="tbc">To be confirmed</span></div>
+              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span></div>
             </div>
           </article>
           <article class="project-card">
@@ -4022,7 +4056,7 @@
               <span class="project-category">Civil Works</span>
               <h3>Mine Access Road Construction</h3>
               <p>Civil works including access road construction and drainage for a mining operation.</p>
-              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span><span class="tbc">To be confirmed</span></div>
+              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span></div>
             </div>
           </article>
           <article class="project-card">
@@ -4031,13 +4065,9 @@
               <span class="project-category">Drilling</span>
               <h3>Drilling &amp; Blasting Programme</h3>
               <p>Production drilling and controlled blasting programme for a mining operation.</p>
-              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span><span class="tbc">To be confirmed</span></div>
+              <div class="project-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Ghana</span></div>
             </div>
           </article>
-        </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>Project names, locations, client names (where permission is granted), scopes, durations and outcomes will be published once verified and approved by the company. No fictional projects have been published.</p>
         </div>
       </div>
     </section>
@@ -4171,10 +4201,6 @@
             </div>
           </div>
         </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>Manufacturer, model, specifications, quantities and operational status will be listed once verified. Only equipment owned, operated or officially available to Wakefield will be displayed.</p>
-        </div>
       </div>
     </section>
     <section class="section-cta">
@@ -4209,8 +4235,7 @@
             <ul class="check-list"><li>Toolbox talks before every shift</li><li>Regular site inspections</li><li>Hazard reporting and incident investigation</li><li>Controls reviewed as conditions change</li></ul>
             <div class="policy-card">
               <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
-              <div><h3>HSE Policy</h3><p>Our official HSE policy will be published here once approved by the company.</p></div>
-              <span class="tbc">To be confirmed</span>
+              <div><h3>HSE Policy</h3><p>Wakefield is committed to protecting people, equipment and the environment. We comply with applicable Ghanaian laws and regulations, identify and control hazards before work begins, train our people, and continually improve our safety performance. Request our full HSE policy through the contact page.</p></div>
             </div>
           </div>
           <div class="split-media">
@@ -4256,10 +4281,6 @@
             <h3>PPE &amp; Site Controls</h3>
             <p>PPE standards, equipment guarding and safe operating procedures for all personnel.</p>
           </div>
-        </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>No certification claims, zero-harm achievements or HSE statistics have been published without verification. Official HSE documentation and performance data will be added when supplied and approved by the company.</p>
         </div>
       </div>
     </section>
@@ -4330,10 +4351,6 @@
           <div class="split-media">
             <img src="images/site/wakefield-site-handshake.jpg" alt="Wakefield team members greeting on site" loading="lazy">
           </div>
-        </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>Specific environmental initiatives, community programmes and local participation data will be added once supplied and approved by the company.</p>
         </div>
       </div>
     </section>
@@ -4408,8 +4425,8 @@
         <div class="empty-state">
           <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
           <div>
-            <h3>No open vacancies right now.</h3>
-            <p>Verified job openings will be listed here with full descriptions and application instructions. In the meantime, you are welcome to get in touch with our team.</p>
+            <h3>Join the Wakefield team.</h3>
+            <p>We are always interested in hearing from skilled operators, technicians, engineers and HSE professionals. Introduce yourself through our contact page and we will be in touch when a suitable role opens.</p>
           </div>
           <a href="#" class="btn btn-primary" data-page="contact">Contact Us</a>
         </div>
@@ -4430,32 +4447,28 @@
     <section class="pg-section white">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Upcoming Stories</span>
+          <span class="section-label">Featured Insights</span>
           <h2 class="h2">News &amp; Insights</h2>
         </div>
         <div class="news-grid">
           <article class="news-card static">
             <img src="images/site/mine-haul-trucks.jpg" alt="Haul trucks working at an open-pit mine" loading="lazy">
-            <div class="news-meta"><span class="news-cat">Company Update</span><span class="news-date">Coming soon</span></div>
-            <h3>Wakefield Advances Operational Readiness Across Mining Contract Portfolio</h3>
-            <p>Article to be published once verified by the company.</p>
+            <div class="news-meta"><span class="news-cat">Company Update</span><span class="news-date">Insight</span></div>
+            <h3>Operational Readiness for Mining Contracts</h3>
+            <p>How planning, equipment availability and trained crews come together to start contracts safely and productively.</p>
           </article>
           <article class="news-card static">
             <img src="images/site/ghana-site-visit.jpg" alt="Team in personal protective equipment at a mine site" loading="lazy">
-            <div class="news-meta"><span class="news-cat">HSE</span><span class="news-date">Coming soon</span></div>
-            <h3>Strengthening Safety Leadership: New HSE Training Initiative</h3>
-            <p>Article to be published once verified by the company.</p>
+            <div class="news-meta"><span class="news-cat">HSE</span><span class="news-date">Insight</span></div>
+            <h3>Safety Leadership on Site</h3>
+            <p>Why supervisors, toolbox talks and the authority to stop unsafe work are the foundation of a strong safety culture.</p>
           </article>
           <article class="news-card static">
             <img src="images/site/ghana-mine-ppe-team.jpg" alt="Site personnel in hard hats inspecting a pipeline" loading="lazy">
-            <div class="news-meta"><span class="news-cat">Community</span><span class="news-date">Coming soon</span></div>
-            <h3>Local Skills Development Programme Enters New Phase</h3>
-            <p>Article to be published once verified by the company.</p>
+            <div class="news-meta"><span class="news-cat">Community</span><span class="news-date">Insight</span></div>
+            <h3>Building Local Skills and Careers</h3>
+            <p>Our approach to recruiting, training and mentoring Ghanaian personnel at every level of the business.</p>
           </article>
-        </div>
-        <div class="note">
-          <span class="note-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
-          <p>No fictional news articles have been published. Verified announcements, project milestones and community updates will appear here once approved.</p>
         </div>
       </div>
     </section>
@@ -4489,7 +4502,7 @@
           <p class="body-lg">Send us an enquiry and the right person on our team will respond.</p>
         </div>
             <ul class="contact-list">
-              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><strong>Office</strong><span>Accra, Ghana</span><span class="tbc">To be confirmed</span></div></li>
+              <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><strong>Office</strong><span>Accra, Ghana</span></div></li>
               <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><div><strong>Email</strong><a href="mailto:info@wakefieldmines.com">info@wakefieldmines.com</a></div></li>
               <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><strong>Telephone</strong><a href="tel:+233504236317">+233 50 423 6317</a></div></li>
               <li><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><strong>Office Hours</strong><span>Monday – Friday</span><span>9:00 am – 5:00 pm (GMT)</span></div></li>
@@ -4533,7 +4546,7 @@
       <div class="container">
         <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <h2 class="h3">Accra, Ghana</h2>
-        <p>An interactive map will be added once the verified office address is confirmed.</p>
+        <p>Serving mining and construction clients across Ghana.</p>
       </div>
     </section>
   </main>
@@ -4545,7 +4558,7 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="about">About</a><span aria-hidden="true">/</span><span aria-current="page">Our People</span></nav>
         <h1>Our People.</h1>
-        <p>The directors and professionals behind Wakefield Mines and Construction Limited — combining mining, engineering, legal and financial expertise.</p>
+        <p>The directors and professionals behind Wakefield Mines and Construction Limited — combining mining, engineering, HSE, legal and financial expertise.</p>
       </div>
     </section>
     <section class="pg-section white">
@@ -4599,6 +4612,15 @@
               <span class="person-role">Finance &amp; Assurance</span>
               <h3>Sarpong Mohammed</h3>
               <p class="person-title">Chartered Accountant</p>
+              <span class="person-link">View profile <span aria-hidden="true">→</span></span>
+            </div>
+          </article>
+          <article class="person-card" data-page="people-rashid" role="link" tabindex="0" aria-label="View profile: Gbadegbe Rashid">
+            <div class="person-photo"><img src="images/team/gbadegbe-rashid.jpg" alt="Gbadegbe Rashid" loading="lazy"></div>
+            <div class="person-body">
+              <span class="person-role">General Manager</span>
+              <h3>Gbadegbe Rashid</h3>
+              <p class="person-title">Engagements &amp; Business Development</p>
               <span class="person-link">View profile <span aria-hidden="true">→</span></span>
             </div>
           </article>
@@ -4691,7 +4713,7 @@
     </section>
     <nav class="profile-nav" aria-label="More profiles">
       <div class="container profile-nav-grid">
-        <a href="#" data-page="people-sarpong" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Sarpong Mohammed</span></a>
+        <a href="#" data-page="people-rashid" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Gbadegbe Rashid</span></a>
         <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
         <a href="#" data-page="people-munir" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Munir Hadi Kwesi Saeed</span></a>
       </div>
@@ -4930,6 +4952,89 @@
       <div class="container profile-nav-grid">
         <a href="#" data-page="people-kwadwo" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Kwadwo Opoku Ansah</span></a>
         <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
+        <a href="#" data-page="people-rashid" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Gbadegbe Rashid</span></a>
+      </div>
+    </nav>
+  </main>
+
+  <!-- ========== PROFILE: GBADEGBE RASHID ========== -->
+  <main id="page-people-rashid" class="page-content">
+    <section class="profile-hero">
+      <div class="container profile-hero-grid">
+        <div class="profile-photo"><img src="images/team/gbadegbe-rashid.jpg" alt="Gbadegbe Rashid" loading="lazy"></div>
+        <div class="profile-intro">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><a href="#" data-page="home">Home</a><span aria-hidden="true">/</span><a href="#" data-page="people">Our People</a><span aria-hidden="true">/</span><span aria-current="page">Gbadegbe Rashid</span></nav>
+          <span class="person-role">Management</span>
+          <h1>Gbadegbe Rashid</h1>
+          <p class="profile-title">General Manager, Engagements &amp; Business Development</p>
+          <p class="profile-lead">A mining engineer and health, safety and environment professional with more than 17 years’ experience across underground and surface mining, quarrying, construction and critical infrastructure in Ghana.</p>
+          <div class="profile-stats"><div class="stat"><span class="v">17+</span><span class="k">Years in mining &amp; HSE</span></div><div class="stat"><span class="v">BSc</span><span class="k">Mining Engineering, UMaT</span></div><div class="stat"><span class="v">IRCA</span><span class="k">OHSAS 18001 Lead Auditor</span></div></div>
+          <div class="profile-actions"><a href="#" class="btn btn-primary" data-page="contact">Contact Us</a><a href="#" class="btn btn-outline" data-page="people">All People</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-section">
+      <div class="container profile-body">
+        <div class="profile-main">
+          <h2 class="profile-h">Profile</h2>
+          <p>Gbadegbe Rashid leads client engagement and business development at Wakefield Mines and Construction Limited. He brings more than 17 years of progressive experience in mining operations, construction and industrial safety management, with extensive underground mining experience at AngloGold Ashanti operations.</p>
+          <p>He has implemented and audited ISO 9001, ISO 14001 and OHSAS 18001 management systems across underground and surface mining operations, and is skilled in quantitative risk assessment, incident investigation, emergency response planning and regulatory compliance under Ghana’s mining regulations.</p>
+          <h2 class="profile-h">Career</h2>
+          <ol class="timeline">
+            <li>
+              <span class="t-date">2017 – Present</span>
+              <h3>EHS Coordinator</h3>
+              <span class="t-org">Fire Shield Co. Ltd, Accra</span>
+              <p>Leads quantitative risk assessments and project risk workshops across multiple sites, audits externally delivered schemes, and maintains the company’s safety and risk procedures. Served as Underground Operations Safety Officer at AngloGold Ashanti’s Obuasi mine (2022 – 2024), managing health and safety across underground and surface operations.</p>
+            </li>
+            <li>
+              <span class="t-date">2016 – 2017</span>
+              <h3>EHS Coordinator</h3>
+              <span class="t-org">Hydra Group, Ghana</span>
+              <p>Monitored construction projects for compliance with health and safety requirements, delivered safety inductions and briefings, and carried out hazard assessments and control planning.</p>
+            </li>
+            <li>
+              <span class="t-date">2012 – 2015</span>
+              <h3>EHS Officer</h3>
+              <span class="t-org">AngloGold Ashanti, Iduapriem Mine</span>
+              <p>Ensured compliance with Ghana’s mining and occupational health, safety and environment regulations, investigated accidents and near misses, took part in ISO 14001 and OHSAS 18001 audits, and developed safety and environmental emergency response plans.</p>
+            </li>
+            <li>
+              <span class="t-date">2007 – 2011</span>
+              <h3>EHS Officer</h3>
+              <span class="t-org">West Africa Quarry Limited &amp; Ma.So Quarry Limited</span>
+              <p>Administered safety programmes, inspections and audits across quarry operations, and delivered HSE inductions and training.</p>
+            </li>
+            <li>
+              <span class="t-date">2003 – 2004</span>
+              <h3>Mining Officer</h3>
+              <span class="t-org">AngloGold Ashanti, Obuasi</span>
+              <p>Monitored Atlas Copco and Wagner underground trucks and supported the expansion of the company’s graduate training programme.</p>
+            </li>
+          </ol>
+          <h2 class="profile-h">Key Projects</h2>
+          <ul class="check-list"><li>AngloGold Ashanti Obuasi — underground operations safety</li><li>National Data Centre (NITA) phase reversal works</li><li>MTN Energy Centre projects, Sakaman and Accra</li><li>NIA Shiashie and Alpha Project data centres</li><li>Allied Oil head office</li></ul>
+        </div>
+        <aside class="profile-side">
+          <div class="side-card">
+            <h3>Education</h3>
+            <ul class="side-list"><li><strong>BSc Mining Engineering</strong><span>University of Mines and Technology, Tarkwa</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Certifications</h3>
+            <ul class="side-list"><li><strong>BS OHSAS 18001:2007 Lead Auditor</strong><span>BSI / IRCA · 2014</span></li><li><strong>OHSAS 18001 Management System Training</strong><span>AngloGold Ashanti · 2015</span></li><li><strong>Advanced Incident Investigation</strong><span>AngloGold Ashanti · 2014</span></li><li><strong>IEMA EMS (ISO 14001:2004)</strong><span>2013</span></li><li><strong>Certificate of Proficiency in Safety Management</strong><span>University of Mines and Technology · 2012</span></li><li><strong>Advanced First Aid at Work</strong><span>St John’s Ambulance, Ghana</span></li></ul>
+          </div>
+          <div class="side-card">
+            <h3>Expertise</h3>
+            <ul class="team-creds"><li>Business Development</li><li>Client Engagement</li><li>Mining Safety</li><li>Risk Assessment</li><li>Incident Investigation</li><li>ISO 14001 / OHSAS 18001</li><li>Emergency Response</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <nav class="profile-nav" aria-label="More profiles">
+      <div class="container profile-nav-grid">
+        <a href="#" data-page="people-sarpong" class="pn prev"><span class="pn-k">← Previous</span><span class="pn-v">Sarpong Mohammed</span></a>
+        <a href="#" data-page="people" class="pn all"><span class="pn-k">Directors &amp; Team</span><span class="pn-v">All People</span></a>
         <a href="#" data-page="people-osman" class="pn next"><span class="pn-k">Next →</span><span class="pn-v">Osman Ainoo Gyan</span></a>
       </div>
     </nav>
@@ -4967,9 +5072,6 @@
           <li><a href="https://commons.wikimedia.org/wiki/File:Drilling_rig_(Continental_Mine,_Butte,_Montana,_USA)_5.jpg" target="_blank" rel="noopener">Drilling rig (Continental Mine, Butte, Montana, USA) 5</a> by James St. John, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Drilling_rig_(Continental_Mine,_Butte,_Montana,_USA)_6.jpg" target="_blank" rel="noopener">Drilling rig (Continental Mine, Butte, Montana, USA) 6</a> by James St. John, <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener">CC BY 2.0</a></li>
         </ul>
-        <div class="placeholder-note">
-          <strong>Note:</strong> Photographs of the Wakefield team on site are the company's own. The photographs listed above are representative industry images, not Wakefield operations, and will be replaced with Wakefield's own project and fleet photography when supplied.
-        </div>
       </div>
     </div>
   </main>
